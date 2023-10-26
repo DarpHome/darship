@@ -1,0 +1,6 @@
+asyncio
+boticordpy
+disnake
+motor
+python-dotenv
+yarl
