@@ -60,6 +60,7 @@
   "LANGUAGE_EN_US": "Английский (США)",
   "LANGUAGE_RU": "Русский",
   "LANGUAGE_UK": "Украинский",
+  "LANGUAGE_INTERNATIONAL": "Интернациональный",
   "SUCCESSFULLY_SET_LANGUAGE": "Язык был успешно изменен на **{language}**.",
   "PERMISSION_CREATE_INSTANT_INVITE": "Создать ссылку-приглашение",
   "PERMISSION_MANAGE_WEBHOOKS": "Управлять вебхуками"

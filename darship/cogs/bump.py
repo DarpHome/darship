@@ -217,10 +217,9 @@ class BumpCog(commands.Cog):
         ]
         async with aiohttp.ClientSession() as session:
             async for doc in self.bot.database.database.guilds.find({
-                'language': {'$eq': source_guild.language},
                 'banned_for': {'$eq': None},
                 'webhook_url': {'$ne': None},
-            }):
+            } | ({} if source_guild.language == 'international' else {'language': {'$eq': source_guild.language}})):
                 target_guild = Guild(self.bot.database, doc)
                 webhook = disnake.Webhook.from_url(target_guild.webhook_url, session=session)
                 try:
@@ -382,6 +381,10 @@ class BumpCog(commands.Cog):
             name=disnake.Localized("language", key="PARAM_LANGUAGE"),
             description=disnake.Localized("Language used to advertising", key="PARAM_LANGUAGE_DESCRIPTION"),
             choices=[
+                disnake.OptionChoice(
+                    name=disnake.Localized("International", key="LANGUAGE_INTERNATIONAL"),
+                    value="international",
+                ),
                 disnake.OptionChoice(
                     name=disnake.Localized("English (US)", key="LANGUAGE_EN_US"),
                     value="en-US",

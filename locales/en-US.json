@@ -61,6 +61,7 @@
   "LANGUAGE_EN_US": "English (US)",
   "LANGUAGE_RU": "Russian",
   "LANGUAGE_UK": "Ukrainian",
+  "LANGUAGE_INTERNATIONAL": "International",
   "SUCCESSFULLY_SET_LANGUAGE": "Successfully set language to **{language}**.",
   "PERMISSION_CREATE_INSTANT_INVITE": "Create instant invite",
   "PERMISSION_MANAGE_WEBHOOKS": "Manage webhooks"

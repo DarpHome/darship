@@ -34,6 +34,10 @@ class PartnershipBot(commands.AutoShardedInteractionBot):
 
 
     def tr(self, locale: str, key: str) -> str:
+        if locale == 'international':
+            if key == 'LANGUAGE':
+                return 'International'
+            locale = 'en-US'
         try:
             ls = self.i18n.get(key)
             if ls:

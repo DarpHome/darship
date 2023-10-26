@@ -59,7 +59,8 @@
   "PARAM_LANGUAGE_DESCRIPTION": "Мова, яка використовується для розсилки",
   "LANGUAGE_EN_US": "Англійська (США)",
   "LANGUAGE_RU": "Російська",
-  "LANGUAGE_UK": "Український",
+  "LANGUAGE_UK": "Українська",
+  "LANGUAGE_INTERNATIONAL": "Інтернаціональна",
   "SUCCESSFULLY_SET_LANGUAGE": "Мова була успішно змінена на **{language}**.",
   "PERMISSION_CREATE_INSTANT_INVITE": "Створіть запрошення",
   "PERMISSION_MANAGE_WEBHOOKS": "Керування вебхуками"
