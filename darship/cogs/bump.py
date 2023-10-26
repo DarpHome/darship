@@ -174,10 +174,12 @@ class BumpCog(commands.Cog):
         rating_as_str = str(rating)
         invalid_webhooks: list[str] = []
         counter: int = 0
-        embed = disnake.Embed(
+        timestamp = disnake.utils.utcnow()
+        member_count = str(inter.guild.member_count)
+        embed = lambda t: disnake.Embed(
             title=inter.guild.name,
             description=source_guild.description,
-            timestamp=disnake.utils.utcnow(),
+            timestamp=timestamp,
             color=source_guild.color,
         ).add_field(
             name=t("OWNER"),
@@ -187,14 +189,14 @@ class BumpCog(commands.Cog):
             value=inter.author.mention,
         ).add_field(
             name=t("MEMBER_COUNT"),
-            value=str(inter.guild.member_count),
+            value=member_count,
         ).add_field(
             name=t("RATING"),
             value=rating_as_str,
         ).set_thumbnail(inter.guild.icon.url if inter.guild.icon else None).set_footer(
             text=f"ID: {source_guild.id} | Owner ID: {inter.guild.owner.id} | Bumper ID: {inter.author.id}"
         )
-        components = [
+        components = lambda t: [
             disnake.ui.Button(
                 style=disnake.ButtonStyle.success,
                 label=t("JOIN"),
@@ -221,9 +223,10 @@ class BumpCog(commands.Cog):
                 'webhook_url': {'$ne': None},
             } | ({} if source_guild.language == 'international' else {'language': {'$eq': source_guild.language}})):
                 target_guild = Guild(self.bot.database, doc)
+                target_t = self.bot.make_tr(target_guild.language)
                 webhook = disnake.Webhook.from_url(target_guild.webhook_url, session=session)
                 try:
-                    await webhook.send(embed=embed, components=components)
+                    await webhook.send(embed=embed(target_t), components=components(target_t))
                     counter += 1
                 except disnake.NotFound:
                     invalid_webhooks.append(target_guild.id)
