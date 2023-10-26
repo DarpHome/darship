@@ -140,13 +140,13 @@ class BumpCog(commands.Cog):
             await inter.response.send_message(t("BANNED_FOR").format(reason=source_guild.banned_for), ephemeral=True)
             return
         if source_guild.language is None:
-            await inter.response.send_message(t("LANGUAGE_SETUP_REQUIRED").format(command="/language"), ephemeral=True)
+            await inter.response.send_message(t("LANGUAGE_SETUP_REQUIRED").format(command="</set-language:1167070852639096844>"), ephemeral=True)
             return
         if source_guild.webhook_url is None:
-            await inter.response.send_message(t("CHANNEL_SETUP_REQUIRED").format(command="/set-channel"), ephemeral=True)
+            await inter.response.send_message(t("CHANNEL_SETUP_REQUIRED").format(command="</set-channel:1167051138995081307>"), ephemeral=True)
             return
         if source_guild.description is None:
-            await inter.response.send_message(t("DESCRIPTION_SETUP_REQUIRED").format(command="/set-description"), ephemeral=True)
+            await inter.response.send_message(t("DESCRIPTION_SETUP_REQUIRED").format(command="</set-description:1167048763932672111>"), ephemeral=True)
             return
         COOLDOWN: int = 60 * 60 * 2
         diff: int = int(time.time()) - (source_guild.last_bumped or 0)
