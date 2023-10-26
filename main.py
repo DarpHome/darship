@@ -2,10 +2,8 @@ import asyncio
 import boticordpy
 import dotenv
 import logging
-from motor.motor_asyncio import AsyncIOMotorClient
 import os
 from typing import Callable
-from darship.database import DatabaseManager
 from darship.core import PartnershipBot
 import traceback
 
