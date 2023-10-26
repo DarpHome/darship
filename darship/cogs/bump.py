@@ -134,7 +134,7 @@ class BumpCog(commands.Cog):
         description=disnake.Localized("Bump server", key="COMMAND_BUMP_DESCRIPTION"),
         dm_permission=False,
     )
-    async def ping(self, inter: disnake.GuildCommandInteraction) -> None:
+    async def bump(self, inter: disnake.GuildCommandInteraction) -> None:
         source_guild, t = await self.bot.begin_interaction(inter)
         if source_guild.banned_for:
             await inter.response.send_message(t("BANNED_FOR").format(reason=source_guild.banned_for), ephemeral=True)
