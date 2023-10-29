@@ -327,7 +327,7 @@ class BumpCog(commands.Cog):
                     value=guild.description,
                     required=True,
                     min_length=24,
-                    max_length=1024,
+                    max_length=1856,
                 )
             ],
             custom_id="darship_set_description",
