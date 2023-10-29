@@ -264,7 +264,7 @@ class BumpCog(commands.Cog):
         if not inter.app_permissions.manage_webhooks:
             _, t = await self.bot.begin_interaction(inter)
             await inter.response.send_message(t("BOT_REQUIRES_NEXT_PERMISSIONS").format(
-                permissions=t("SEPARATOR").join(map(lambda k: t(k), list_permission_keys)),
+                permissions=t("SEPARATOR").join(map(lambda k: t(k), list_permission_keys(disnake.Permissions(manage_webhooks=True)))),
             ))
             return
         await inter.response.defer()
@@ -351,7 +351,7 @@ class BumpCog(commands.Cog):
         if not inter.app_permissions.create_instant_invite:
             _, t = await self.bot.begin_interaction(inter)
             await inter.response.send_message(t("BOT_REQUIRES_NEXT_PERMISSIONS").format(
-                permissions=t("SEPARATOR").join(map(lambda k: t(k), list_permission_keys)),
+                permissions=t("SEPARATOR").join(map(lambda k: t(k), list_permission_keys(disnake.Permissions(create_instant_invite)))),
             ), ephemeral=True)
             return
         invite = await inter.channel.create_invite(
