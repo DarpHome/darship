@@ -53,7 +53,7 @@ class BaseCog(commands.Cog):
                 color=0x6f9ad2,
             ).add_field(
                 name=t("BOT_OWNER"),
-                value="<@1073325901825187841> (nerdarp1)",
+                value="<@1073325901825187841> (nerdarp)",
                 inline=False,
             ).add_field(
                 name=t("BOT_LANGUAGE_VERSION"),
