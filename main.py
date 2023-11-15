@@ -39,8 +39,8 @@ async def amain() -> None:
         bot.load_extensions("darship/cogs")
         bot.presence_updater.start()
         await bot.connect()
-    except Exception as exception:
-        traceback.print_exception(exception)
+    except Exception as exc:
+        traceback.print_exception(exc)
 
 
 async def aexit() -> None:
@@ -54,22 +54,22 @@ async def ahandle_exception(raiser: Callable[[], None]) -> None:
     except KeyboardInterrupt:
         pass
     except Exception as exc:
-        traceback.print_exception(exception)
+        traceback.print_exception(exc)
     else:
         print("something went wrong!!!")
 
 
-def make_raiser(exception: Exception) -> Callable[[], None]:
+def make_raiser(exc: Exception) -> Callable[[], None]:
     def raiser() -> None:
-        raise exception
+        raise exc
     return raiser
 
 
 if __name__ == '__main__':
     try:
         loop.run_until_complete(amain())
-    except Exception as exception:
-        loop.run_until_complete(ahandle_exception(make_raiser(exception)))
+    except Exception as exc:
+        loop.run_until_complete(ahandle_exception(make_raiser(exc)))
     finally:
         if not bot.is_closed:
             loop.run_until_complete(aexit())
