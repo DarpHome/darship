@@ -3,7 +3,7 @@ import boticordpy
 import dotenv
 import logging
 import os
-from typing import Callable
+from typing import Callable, Optional, TypedDict
 from darship.core import PartnershipBot
 import traceback
 
@@ -16,9 +16,13 @@ asyncio.set_event_loop(loop)
 
 bot = PartnershipBot(mongo_uri=os.getenv('MONGODB_URI'), loop=loop)
 
+class BoticordStatsPayload(TypedDict):
+    members: Optional[int]
+    servers: Optional[int]
+    shards: Optional[int]
 
-async def get_stats():
-    return {"servers": len(bot.guilds), "shards": len(bot.shard_count or []) or None, "members": len(bot.users)}
+async def get_stats() -> BoticordStatsPayload:
+    return {"members": len(bot.users) or None, "servers": len(bot.guilds) or None, "shards": bot.shard_count or None}
 
 
 async def amain() -> None:
@@ -55,7 +59,7 @@ async def ahandle_exception(raiser: Callable[[], None]) -> None:
         print("something went wrong!!!")
 
 
-def make_raiser(exception: Exception) -> None:
+def make_raiser(exception: Exception) -> Callable[[], None]:
     def raiser() -> None:
         raise exception
     return raiser
@@ -68,5 +72,5 @@ if __name__ == '__main__':
         loop.run_until_complete(ahandle_exception(make_raiser(exception)))
     finally:
         if not bot.is_closed:
-          loop.run_until_complete(aexit())
+            loop.run_until_complete(aexit())
         loop.close()
