@@ -22,5 +22,5 @@ def list_permission_keys(permissions: disnake.Permissions) -> list[str]:
     }
     return list(filter(
         lambda v: not not v,
-        map(lambda p: table.get(p[0]) if p[1] else None, permissions.__iter__()),
+        map(lambda p: table.get(p[0]) if p[1] else None, iter(permissions)),
     ))
