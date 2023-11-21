@@ -36,7 +36,7 @@
   "COMMAND_SETCOLOR_NAME": "установить-цвет",
   "COMMAND_SETCOLOR_DESCRIPTION": "Установить цвет сообщения",
   "PARAM_COLOR": "цвет",
-  "PARAM_COLOR_DESCRIPTION": "Цвет сообщения",
+  "PARAM_COLOR_DESCRIPTION": "Цвет сообщения (пример: 0xFF0000)",
   "SUCCESSFULLY_SET_COLOR": "<-- Успешно установлен цвет на: {color}.",
   "COMMAND_SETDESCRIPTION_NAME": "установить-описание",
   "COMMAND_SETDESCRIPTION_DESCRIPTION": "Установить описание",
