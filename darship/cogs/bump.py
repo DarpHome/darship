@@ -289,7 +289,7 @@ class BumpCog(commands.Cog):
         inter: disnake.GuildCommandInteraction,
         color: int = commands.Param(
             name=disnake.Localized("color", key="PARAM_COLOR"),
-            description=disnake.Localized("Embed color", key="PARAM_COLOR_DESCRIPTION"),
+            description=disnake.Localized("Embed color (example: 0xFF0000)", key="PARAM_COLOR_DESCRIPTION"),
             min_value=0x000000,
             max_value=0xFFFFFF,
         ),
