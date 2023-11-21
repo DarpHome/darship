@@ -36,7 +36,7 @@
   "COMMAND_SETCOLOR_NAME": "встановити-колір",
   "COMMAND_SETCOLOR_DESCRIPTION": "Встановити колір повідомлення",
   "PARAM_COLOR": "колір",
-  "PARAM_COLOR_DESCRIPTION": "Колір повідомлення",
+  "PARAM_COLOR_DESCRIPTION": "Колір повідомлення (приклад: 0xFF0000)",
   "SUCCESSFULLY_SET_COLOR": "<-- Успішно встановлено колір на: {color}.",
   "COMMAND_SETDESCRIPTION_NAME": "встановити-описання",
   "COMMAND_SETDESCRIPTION_DESCRIPTION": "Встановити опис",
