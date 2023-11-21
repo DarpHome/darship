@@ -37,7 +37,7 @@
   "COMMAND_SETCOLOR_NAME": "set-color",
   "COMMAND_SETCOLOR_DESCRIPTION": "Set embed color",
   "PARAM_COLOR": "color",
-  "PARAM_COLOR_DESCRIPTION": "Embed color",
+  "PARAM_COLOR_DESCRIPTION": "Embed color (example: 0xFF0000)",
   "SUCCESSFULLY_SET_COLOR": "<-- Successfully set color to {color}",
   "COMMAND_SETDESCRIPTION_NAME": "set-description",
   "COMMAND_SETDESCRIPTION_DESCRIPTION": "Set description",
