@@ -8,15 +8,17 @@ from ..utils import python_version
 
 class BaseCog(commands.Cog):
     bot: PartnershipBot
+
     def __init__(self, bot: PartnershipBot) -> None:
         self.bot = bot
         super().__init__()
 
     @commands.Cog.listener()
     async def on_ready(self) -> None:
-        self.bot.logger.info("Logged as %s#%s!", self.bot.user.name, self.bot.user.discriminator)
+        self.bot.logger.info(
+            "Logged as %s#%s!", self.bot.user.name, self.bot.user.discriminator
+        )
         await self.bot.update_presence()
-
 
     @commands.slash_command(
         name=disnake.Localized("ping", key="COMMAND_PING_NAME"),
@@ -39,7 +41,6 @@ class BaseCog(commands.Cog):
             f"🏓 {t('PING_HTTP')}: {spent:.4}ms",
         )
 
-
     @commands.slash_command(
         name=disnake.Localized("bot", key="COMMAND_BOT_NAME"),
         description=disnake.Localized("About bot", key="COMMAND_BOT_DESCRIPTION"),
@@ -50,12 +51,14 @@ class BaseCog(commands.Cog):
             embed=disnake.Embed(
                 title=t("BOT_TITLE"),
                 description=t("BOT_DESCRIPTION"),
-                color=0x6f9ad2,
-            ).add_field(
+                color=0x6F9AD2,
+            )
+            .add_field(
                 name=t("BOT_OWNER"),
                 value="<@1073325901825187841> (nerdarp)",
                 inline=False,
-            ).add_field(
+            )
+            .add_field(
                 name=t("BOT_LANGUAGE_VERSION"),
                 value=f"<:dh_pl_logo_python:1165581055915466752> {python_version(False)} (||{python_version(True)}||)",
             ),

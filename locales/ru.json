@@ -63,5 +63,6 @@
   "LANGUAGE_INTERNATIONAL": "Интернациональный",
   "SUCCESSFULLY_SET_LANGUAGE": "Язык был успешно изменен на **{language}**.",
   "PERMISSION_CREATE_INSTANT_INVITE": "Создать ссылку-приглашение",
-  "PERMISSION_MANAGE_WEBHOOKS": "Управлять вебхуками"
+  "PERMISSION_MANAGE_WEBHOOKS": "Управлять вебхуками",
+  "INVALID_CHANNEL": "Неверный канал для авто-партнерств. Команда должна быть прописана в текстовом канале, а не в ветке."
 }

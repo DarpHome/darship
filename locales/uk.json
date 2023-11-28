@@ -63,5 +63,6 @@
   "LANGUAGE_INTERNATIONAL": "Інтернаціональна",
   "SUCCESSFULLY_SET_LANGUAGE": "Мова була успішно змінена на **{language}**.",
   "PERMISSION_CREATE_INSTANT_INVITE": "Створіть запрошення",
-  "PERMISSION_MANAGE_WEBHOOKS": "Керування вебхуками"
+  "PERMISSION_MANAGE_WEBHOOKS": "Керування вебхуками",
+  "INVALID_CHANNEL": "Неправильний канал для авто-партнерств. Команда має бути прописана в текстовому каналі, а не в гілці."
 }

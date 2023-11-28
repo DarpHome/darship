@@ -64,5 +64,6 @@
   "LANGUAGE_INTERNATIONAL": "International",
   "SUCCESSFULLY_SET_LANGUAGE": "Successfully set language to **{language}**.",
   "PERMISSION_CREATE_INSTANT_INVITE": "Create instant invite",
-  "PERMISSION_MANAGE_WEBHOOKS": "Manage webhooks"
+  "PERMISSION_MANAGE_WEBHOOKS": "Manage webhooks",
+  "INVALID_CHANNEL": "Invalid channel for partnership. Command should be executed in text channel, not in thread."
 }

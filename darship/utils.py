@@ -15,12 +15,14 @@ async def insert_and_return(coll: AsyncIOMotorCollection, doc: Any) -> Any:
     await coll.insert_one(doc)
     return doc
 
+
 def list_permission_keys(permissions: disnake.Permissions) -> list[str]:
     table = {
-        'create_instant_invite': 'PERMISSION_CREATE_INSTANT_INVITE',
-        'manage_webhooks': 'PERMISSION_MANAGE_WEBHOOKS',
+        "create_instant_invite": "PERMISSION_CREATE_INSTANT_INVITE",
+        "manage_webhooks": "PERMISSION_MANAGE_WEBHOOKS",
     }
-    return list(filter(
-        lambda v: not not v,
-        map(lambda p: table.get(p[0]) if p[1] else None, iter(permissions)),
-    ))
+    return [
+        x
+        for x in map(lambda p: table.get(p[0]) if p[1] else None, iter(permissions))
+        if x is not None
+    ]
