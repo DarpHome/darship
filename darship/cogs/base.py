@@ -68,6 +68,12 @@ class BaseCog(commands.Cog):
                     url="https://discord.gg/EVtSwKttEH",
                     emoji="<:dh_discord_clyde_blurple:1145500476150927420>",
                 ),
+                disnake.ui.Button(
+                    style=disnake.ButtonStyle.link,
+                    url=f"https://discord.com/oauth2/authorize?client_id={self.bot.user.id}&scope=bot&permissions=536872961",
+                    emoji="🔗",
+                    label=t("BOT_ADD"),
+                ),
             ],
             ephemeral=True,
         )

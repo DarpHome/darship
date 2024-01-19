@@ -6,6 +6,7 @@
   "BOT_DESCRIPTION": "Yet another bot for auto-partnership.",
   "BOT_OWNER": "Author",
   "BOT_LANGUAGE_VERSION": "Bot language version",
+  "BOT_ADD": "Add me",
   "COMMAND_PING_NAME": "ping",
   "COMMAND_PING_DESCRIPTION": "pong",
   "COMMAND_BOT_NAME": "bot",
