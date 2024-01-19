@@ -6,6 +6,7 @@
   "BOT_DESCRIPTION": "Еще один бот для автопартнерств.",
   "BOT_OWNER": "Автор",
   "BOT_LANGUAGE_VERSION": "Версия языка на котором написан бот",
+  "BOT_ADD": "Добавь меня",
   "COMMAND_PING_NAME": "пинг",
   "COMMAND_PING_DESCRIPTION": "понг",
   "COMMAND_BOT_NAME": "бот",
